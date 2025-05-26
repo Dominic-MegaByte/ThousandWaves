@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Zodiac Signs</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgb(242, 242, 242);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("IMG/orm-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  background-color: #0b0830;
+  color: #FFFFFF;
+  padding: 1em;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.top-nav > img {
+  width: 3vw;
+  height: auto;
+  margin-right: 1em;
+}
+
+.top-nav .text {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 1vh;
+  margin-right: 2vw;
+}
+
+.top-nav .text h1 {
+  font-size: 2.4vh;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  flex: 1;
+}
+
+.navigation img {
+  width: 3vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .center-container {
+    width: 98vw;
+    max-width: 98vw;
+    height: auto;
+    max-height: none;
+  }
+  .left-box, .right-box {
+    width: 48vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 2vw 1vw;
+  }
+}
+@media (max-width: 900px) {
+  .bg::before {
+    background-size: contain;
+  }
+}
+
+.footer {
+  width: 100vw;
+  background: #0b0830;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content {
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    font-size: 0.9em;
+  }
+}
+
+/* Content */
+
+.zodiac-table-container {
+    width: 90vw;
+    margin: 2em auto;
+    overflow-x: auto;
+}
+#zodiac-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2E2E2E;
+    color: #fff;
+    font-size: 1.1em;
+}
+#zodiac-table th, #zodiac-table td {
+    border: 1px solid #444;
+    padding: 0.7em 1em;
+    text-align: center;
+}
+#zodiac-table th {
+    background: #444;
+    color: #FFD700;
+}
+#zodiac-table tr:nth-child(even) {
+    background: #333;
+}
+#zodiac-table tr:hover {
+    background: #555;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+#zodiac-search-input {
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.search-container button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ccc;
+    background: #FFD700;
+    color: #222;
+    cursor: pointer;
+}
+.search-container button:hover {
+    background: #FFC300;
+}
+
+.zodiac {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.zodiac img {
+    width: 30vw;
+    height: auto;
+    margin-bottom: 1em; /* Add spacing between image and text */
+    margin-top: 1em;
+}
+
+.zodiac .text {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1vh;
+    margin: 0 auto;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="top-nav">
+    <img src="IMG/pen-icon-2.png" alt="Logo">
+    <div class="text">
+        <h1>Thousand Waves</h1>
+    </div>
+    <div class="navigation">
+        <a href="index.html">
+        <img src="IMG/home-icon.png" alt="Logo" title="Home">
+        </a>
+        <a href="about_me.html">
+        <img src="IMG/about-me-icon.png" alt="Logo" title="About Me">
+        </a>
+        <a href="know_me_well.html">
+        <img src="IMG/know-me-well-icon.png" alt="Logo" title="Know Me Well">
+        </a>
+        <a href="zodiac_signs.html">
+        <img src="IMG/zodiac-icon.png" alt="Logo" title="Zodiac Signs">
+        </a>
+        <a href="portfolio.html">
+        <img src="IMG/continous-learning-icon.png" alt="Logo" title="Zodiac Signs">
+        </a>
+    </div>
+    </div>
+
+    <div class="bg">
+        <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 2em; padding: 2em;">
+            <img src="IMG/zodiac-signs.jpg" alt="Logo"style="width: 40%; height: 40%; margin-bottom: 10px; border-radius: 50%;">
+            <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center; margin: 0;">
+            <i>Zodiac Signs</i>
+            </h1>
+            <div class="zodiac">
+                <form id="zodiac-search-form" action="#"> 
+                    <div class="search-container">
+                        <input type="text" placeholder="Zodiac Signs..." name="searched" id="zodiac-search-input">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="zodiac zodiac-table-container">
+                <table id="zodiac-table" border="0">
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Months</th>
+                    <th>Element</th>
+                    <th>Symbol</th>
+                    <th>Nickname</th>
+                    <th>Compatibility</th>
+                    <th>Personalities</th>
+                    <th>Weakness</th>
+                    <th>Modalities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Zodiac data will be inserted here by JS -->
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Zodiac data array
+        const zodiacData = [
+          { name: 'Aries', months: 'Mar 21 - Apr 19', element: 'Fire', symbol: 'Ram', nickname: 'The Warrior', compatibility: 'Leo, Sagittarius, Gemini, Aquarius', personalities: 'Courageous, determined, confident', weakness: 'Impatient, moody', modalities: 'Cardinal' },
+          { name: 'Taurus', months: 'Apr 20 - May 20', element: 'Earth', symbol: 'Bull', nickname: 'The Builder', compatibility: 'Virgo, Capricorn, Cancer, Pisces', personalities: 'Reliable, patient, practical', weakness: 'Stubborn, possessive', modalities: 'Fixed' },
+          { name: 'Gemini', months: 'May 21 - Jun 20', element: 'Air', symbol: 'Twins', nickname: 'The Communicator', compatibility: 'Libra, Aquarius, Aries, Leo', personalities: 'Adaptable, outgoing, intelligent', weakness: 'Indecisive, nervous', modalities: 'Mutable' },
+          { name: 'Cancer', months: 'Jun 21 - Jul 22', element: 'Water', symbol: 'Crab', nickname: 'The Nurturer', compatibility: 'Scorpio, Pisces, Taurus, Virgo', personalities: 'Loyal, protective, intuitive', weakness: 'Moody, pessimistic', modalities: 'Cardinal' },
+          { name: 'Leo', months: 'Jul 23 - Aug 22', element: 'Fire', symbol: 'Lion', nickname: 'The Leader', compatibility: 'Aries, Sagittarius, Gemini, Libra', personalities: 'Confident, creative, generous', weakness: 'Arrogant, stubborn', modalities: 'Fixed' },
+          { name: 'Virgo', months: 'Aug 23 - Sep 22', element: 'Earth', symbol: 'Virgin', nickname: 'The Analyst', compatibility: 'Taurus, Capricorn, Cancer, Scorpio', personalities: 'Analytical, kind, hardworking', weakness: 'Overly critical, worrier', modalities: 'Mutable' },
+          { name: 'Libra', months: 'Sep 23 - Oct 22', element: 'Air', symbol: 'Scales', nickname: 'The Diplomat', compatibility: 'Gemini, Aquarius, Leo, Sagittarius', personalities: 'Diplomatic, fair-minded, social', weakness: 'Indecisive, avoids confrontations', modalities: 'Cardinal' },
+          { name: 'Scorpio', months: 'Oct 23 - Nov 21', element: 'Water', symbol: 'Scorpion', nickname: 'The Investigator', compatibility: 'Cancer, Pisces, Virgo, Capricorn', personalities: 'Resourceful, brave, passionate', weakness: 'Jealous, secretive', modalities: 'Fixed' },
+          { name: 'Sagittarius', months: 'Nov 22 - Dec 21', element: 'Fire', symbol: 'Archer', nickname: 'The Explorer', compatibility: 'Aries, Leo, Libra, Aquarius', personalities: 'Generous, idealistic, great sense of humor', weakness: 'Impatient, tactless', modalities: 'Mutable' },
+          { name: 'Capricorn', months: 'Dec 22 - Jan 19', element: 'Earth', symbol: 'Goat', nickname: 'The Achiever', compatibility: 'Taurus, Virgo, Scorpio, Pisces', personalities: 'Disciplined, responsible, self-control', weakness: 'Know-it-all, unforgiving', modalities: 'Cardinal' },
+          { name: 'Aquarius', months: 'Jan 20 - Feb 18', element: 'Air', symbol: 'Water Bearer', nickname: 'The Visionary', compatibility: 'Gemini, Libra, Aries, Sagittarius', personalities: 'Progressive, original, independent', weakness: 'Aloof, rebellious', modalities: 'Fixed' },
+          { name: 'Pisces', months: 'Feb 19 - Mar 20', element: 'Water', symbol: 'Fish', nickname: 'The Dreamer', compatibility: 'Cancer, Scorpio, Taurus, Capricorn', personalities: 'Compassionate, artistic, intuitive', weakness: 'Fearful, overly trusting', modalities: 'Mutable' }
+        ];
+        
+        function renderZodiacTable(data) {
+          const tbody = document.querySelector('#zodiac-table tbody');
+          tbody.innerHTML = '';
+          if (data.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9">No results found.</td></tr>';
+            return;
+          }
+          data.forEach(z => {
+            const row = `<tr><td>${z.name}</td><td>${z.months}</td><td>${z.element}</td><td>${z.symbol}</td><td>${z.nickname}</td><td>${z.compatibility}</td><td>${z.personalities}</td><td>${z.weakness}</td><td>${z.modalities}</td></tr>`;
+            tbody.innerHTML += row;
+          });
+        }
+        
+        // Initial render
+        renderZodiacTable(zodiacData);
+        
+        document.getElementById('zodiac-search-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const search = document.getElementById('zodiac-search-input').value.trim().toLowerCase();
+          const filtered = zodiacData.filter(z =>
+            z.name.toLowerCase().includes(search) ||
+            z.months.toLowerCase().includes(search) ||
+            z.element.toLowerCase().includes(search) ||
+            z.symbol.toLowerCase().includes(search) ||
+            z.nickname.toLowerCase().includes(search) ||
+            z.compatibility.toLowerCase().includes(search) ||
+            z.personalities.toLowerCase().includes(search) ||
+            z.weakness.toLowerCase().includes(search) ||
+            z.modalities.toLowerCase().includes(search)
+          );
+          renderZodiacTable(filtered);
+        });
+      </script>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Thousand Waves. All rights reserved.</p>
+    </div>
+    </footer>
+
+
+</body>
+</html>

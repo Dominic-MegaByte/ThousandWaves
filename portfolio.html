@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgb(242, 242, 242);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("IMG/orm-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  background-color: #0b0830;
+  color: #FFFFFF;
+  padding: 1em;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.top-nav > img {
+  width: 3vw;
+  height: auto;
+  margin-right: 1em;
+}
+
+.top-nav .text {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 1vh;
+  margin-right: 2vw;
+}
+
+.top-nav .text h1 {
+  font-size: 2.4vh;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  flex: 1;
+}
+
+.navigation img {
+  width: 3vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+@media (max-width: 1700px) {
+  .center-container {
+    width: 98vw;
+    max-width: 98vw;
+    height: auto;
+    max-height: none;
+  }
+  .left-box, .right-box {
+    width: 48vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 2vw 1vw;
+  }
+}
+@media (max-width: 900px) {
+  .bg::before {
+    background-size: contain;
+  }
+}
+
+.footer {
+  width: 100vw;
+  background: #0b0830;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content {
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    font-size: 0.9em;
+  }
+}
+
+/* Content */
+
+.column {
+  float: left;
+  padding: 12px;
+}
+
+.clearfix {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.column.menu {
+  width: 25%;
+  min-width: 180px;
+  box-sizing: border-box;
+  background-color: rgb(239, 222, 205);
+}
+
+.column.content {
+  width: 75%;
+  min-width: 220px;
+  box-sizing: border-box;
+  background-color: rgb(181, 157, 123);
+  padding-top: 2%;
+}
+
+.menu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #0b0830;
+  color: #ffffff;
+  font-size: 150%;
+}
+
+.menu li:hover {
+  background-color: #3c36a8;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .clearfix {
+    flex-direction: column;
+  }
+  .column.menu, .column.content {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.gallery img {
+    width: 20vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="top-nav">
+    <img src="IMG/pen-icon-2.png" alt="Logo">
+    <div class="text">
+        <h1>Thousand Waves</h1>
+    </div>
+    <div class="navigation">
+        <a href="index.html">
+        <img src="IMG/home-icon.png" alt="Logo" title="Home">
+        </a>
+        <a href="about_me.html">
+        <img src="IMG/about-me-icon.png" alt="Logo" title="About Me">
+        </a>
+        <a href="know_me_well.html">
+        <img src="IMG/know-me-well-icon.png" alt="Logo" title="Know Me Well">
+        </a>
+        <a href="zodiac_signs.html">
+        <img src="IMG/zodiac-icon.png" alt="Logo" title="Zodiac Signs">
+        </a>
+        <a href="portfolio.html">
+        <img src="IMG/continous-learning-icon.png" alt="Logo" title="Zodiac Signs">
+        </a>
+    </div>
+    </div>
+
+    <div class="bg">
+    <div class="clearfix">
+        <div class="column menu">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <p style="font-size: 300%; font-family: 'Playfair Display', serif; text-align: center;"> Portfolio </p>
+            </div>
+            <br>
+            <br>
+            <ul>
+                <li><a href="#section1">PT Onsite</a></li>
+                <li><a href="#section2">PT Online</a></li>
+                <li><a href="#section3">UO</a></li>
+                <li><a href="#section4">HOA</a></li>
+                <li><a href="#section4">Examination</a></li>
+            </ul>
+        </div>
+
+        <div class="column content">
+            <section id="section1">
+                <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;">Participation Task - Onsite</h1>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="IMG/PT-Johari.jpg" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-Johari</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-1.jpg" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-1</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-2.jpg" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-2</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-3-PRE-1.png" alt="Commissioned Logo 2">
+                        <img src="IMG/HOA-3-PRE-2.png" alt="Commissioned Logo 2">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Pre-HOA-3</p>
+                    </div>
+                        <div class="gallery-item">
+                        <img src="IMG/PT-CU-4-Pre-and-Post.jpg" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-4</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-W5-D1-PT.jpg" alt="Website Project Screenshot">
+                        <img src="IMG/PT-W5-D1-PT-2.jpg" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-W5</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-CU-5-Pre-and-Post.jpg" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-5</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-W8-PR.jpg" alt="Commissioned Logo 2">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-W8-PR</p>
+                    </div>
+                        <div class="gallery-item">
+                        <img src="IMG/PT-W9-Pre-Test.jpg" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-W9</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-CU-8-Pre.jpg" alt="Website Project Screenshot">
+                        <img src="IMG/PT-CU-8-Post.jpg" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-8</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-CU-9-Pre.jpg" alt="Commissioned Logo 1" >
+                        <img src="IMG/PT-CU-9-Post.jpg" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-9</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-CU-10.jpg" alt="Commissioned Logo 2">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-10</p>
+                    </div>
+                        <div class="gallery-item">
+                        <img src="IMG/PT-CU-11.jpg" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-11</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-CU-12.jpg" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-12</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-CU-13.jpg" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-CU-13</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-W17.jpg" alt="Commissioned Logo 2">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-W17</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/wireframe-1.jpg" alt="Commissioned Logo 2">
+                        <img src="IMG/wireframe-2.jpg" alt="Commissioned Logo 2">
+                        <img src="IMG/wireframe-3.jpg" alt="Commissioned Logo 2">
+                        <img src="IMG/wireframe-4.jpg" alt="Commissioned Logo 2">
+                        <img src="IMG/wireframe-5.jpg" alt="Commissioned Logo 2">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-W17</p>
+                    </div>
+                </div>
+            </section>
+            <div class="column content">
+            <section id="section2">
+                <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;">Participation Task - Online</h1>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="IMG/PT-Online-4.png" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">COR</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-Online-21.png" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-100-Midterm-Quiz-1</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/PT-Online-22.png" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">PT-100-Midterm-Quiz-2</p>
+                    </div>
+                </div>
+            </section>
+            <section id="section3">
+                <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;">Unit Output</h1>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="IMG/UO-1.jpg" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">UO-1-TDD</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/UO-3.jpg" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">UO-3-Mind Map</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/UO-4.jpg" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">UO-4-MVC Framework</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/UO-5.jpg" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">UO-5-Puzzle</p>
+                    </div>
+                </div>
+            </section>
+            <section id="section4">
+                <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;">HOA</h1>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-2-1.png" alt="Johari">
+                        <img src="IMG/HOA-2-2.png" alt="Johari">
+                        <img src="IMG/HOA-2-3.png" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-2</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-3-1.png" alt="Website Project Screenshot">
+                        <img src="IMG/HOA-3-2.png" alt="Website Project Screenshot">
+                        <img src="IMG/HOA-3-3.png" alt="Website Project Screenshot">
+                        <img src="IMG/HOA-3-4.png" alt="Website Project Screenshot">
+                        <img src="IMG/HOA-3-5.png" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-3</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-4.png" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-4k</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-5.png" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-5</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-7.png" alt="Johari">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-7</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-8.png" alt="Website Project Screenshot">
+                        <img src="IMG/HOA-8-2.png" alt="Website Project Screenshot">
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-8</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-9.png" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-9</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="IMG/HOA-10.png" alt="Commissioned Logo 1" >
+                        <p style="font-size: 170%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">HOA-10</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Thousand Waves. All rights reserved.</p>
+    </div>
+    </footer>
+
+
+</body>
+</html>

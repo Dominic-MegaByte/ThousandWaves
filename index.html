@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgb(242, 242, 242);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("IMG/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  background-color: #0b0830;
+  color: #FFFFFF;
+  padding: 1em;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.top-nav > img {
+  width: 3vw;
+  height: auto;
+  margin-right: 1em;
+}
+
+.top-nav .text {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 1vh;
+  margin-right: 2vw;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  flex: 1;
+}
+
+.navigation img {
+  width: 3vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 80vh;
+  max-width: 1200px;
+  max-height: 90vh;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  transition: width 0.3s, height 0.3s, max-width 0.3s, max-height 0.3s;
+  box-sizing: border-box;
+}
+
+.left-box, .right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  min-width: 160px;
+  max-width: 500px;
+  padding: 2vw;
+  box-sizing: border-box;
+  margin: 1vw;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+.right-box img {
+  max-width: 150%;
+  height: auto;
+}
+
+.left-box p {
+  font-size: 150%;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .center-container {
+    width: 98vw;
+    max-width: 98vw;
+    height: auto;
+    max-height: none;
+  }
+  .left-box, .right-box {
+    width: 48vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 2vw 1vw;
+  }
+}
+@media (max-width: 900px) {
+  .bg::before {
+    background-size: contain;
+  }
+  .center-container {
+    flex-direction: column;
+    width: 98vw;
+    max-width: 100vw;
+    height: auto;
+    max-height: none;
+    padding: 0 1vw;
+  }
+  .left-box, .right-box {
+    width: 90vw;
+    max-width: 98vw;
+    min-width: 0;
+    margin: 2vw 0;
+    padding: 3vw 2vw;
+  }
+}
+@media (max-width: 600px) {
+  .center-container {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+  }
+  .left-box, .right-box {
+    width: 98vw;
+    max-width: 100vw;
+    padding: 2vw 1vw;
+    font-size: 1em;
+  }
+}
+
+.footer {
+  width: 100vw;
+  background: #0b0830;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content {
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    font-size: 0.9em;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <img src="IMG/pen-icon-2.png" alt="Logo">
+  <div class="text">
+    <h1>Thousand Waves</h1>
+  </div>
+  <div class="navigation">
+    <a href="index.html">
+      <img src="IMG/home-icon.png" alt="Logo" title="Home">
+    </a>
+    <a href="about_me.html">
+      <img src="IMG/about-me-icon.png" alt="Logo" title="About Me">
+    </a>
+    <a href="know_me_well.html">
+      <img src="IMG/know-me-well-icon.png" alt="Logo" title="Know Me Well">
+    </a>
+    <a href="zodiac_signs.html">
+      <img src="IMG/zodiac-icon.png" alt="Logo" title="Zodiac Signs">
+    </a>
+    <a href="portfolio.html">
+        <img src="IMG/continous-learning-icon.png" alt="Logo" title="Zodiac Signs">
+    </a>
+  </div>
+</div>
+
+<div class="bg">
+  <div class="center-container">
+    <div class="left-box">
+      <p style="font-size: 250%; font-family: 'Playfair Display', serif;"><b><i>Hello, and welcome to Thousand Waves!</i></b></p>
+      <p>My name is Andrew Dominic L. Ma-ano, and I’m excited to share with you the story of my journey. This path has been filled with learning, growth, and discovery—shaped by my experiences, passions, and the people I’ve met along the way. Through Thousand Waves, I invite you to walk alongside me as I reflect on where I’ve been, where I am now, and where I hope to go.</p>
+      <p>Thank you for joining me—this is only the beginning.</p>
+    </div>
+    <div class="right-box">
+      <img src="IMG/intro-image.png" alt="Logo" style="width: 50%; height: auto;">
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 Thousand Waves. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

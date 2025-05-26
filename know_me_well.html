@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Know Me Well</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgb(242, 242, 242);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("IMG/know-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  background-color: #0b0830;
+  color: #FFFFFF;
+  padding: 1em;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.top-nav > img {
+  width: 3vw;
+  height: auto;
+  margin-right: 1em;
+}
+
+.top-nav .text {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 1vh;
+  margin-right: 2vw;
+}
+
+.top-nav .text h1 {
+  font-size: 2.4vh;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  flex: 1;
+}
+
+.navigation img {
+  width: 3vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .center-container {
+    width: 98vw;
+    max-width: 98vw;
+    height: auto;
+    max-height: none;
+  }
+  .left-box, .right-box {
+    width: 48vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 2vw 1vw;
+  }
+}
+@media (max-width: 900px) {
+  .bg::before {
+    background-size: contain;
+  }
+}
+
+.footer {
+  width: 100vw;
+  background: #0b0830;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content {
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    font-size: 0.9em;
+  }
+}
+
+/* Content */
+
+.container-hoa5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    max-width: 660px;
+    margin: auto;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 150%;
+}
+.card-hoa5 {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #0b0830;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+}
+.card-hoa5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.card-hoa5.active img {
+    display: block;
+}
+.card-hoa5.active {
+    background: #222;
+    color: #fff;
+}
+
+.clearfix {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="top-nav">
+    <img src="IMG/pen-icon-2.png" alt="Logo">
+    <div class="text">
+        <h1>Thousand Waves</h1>
+    </div>
+    <div class="navigation">
+        <a href="index.html">
+        <img src="IMG/home-icon.png" alt="Logo" title="Home">
+        </a>
+        <a href="about_me.html">
+        <img src="IMG/about-me-icon.png" alt="Logo" title="About Me">
+        </a>
+        <a href="know_me_well.html">
+        <img src="IMG/know-me-well-icon.png" alt="Logo" title="Know Me Well">
+        </a>
+        <a href="zodiac_signs.html">
+        <img src="IMG/zodiac-icon.png" alt="Logo" title="Zodiac Signs">
+        </a>
+        <a href="portfolio.html">
+        <img src="IMG/continous-learning-icon.png" alt="Logo" title="Zodiac Signs">
+        </a>
+    </div>
+    </div>
+
+    <div class="bg">
+        <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 2em; padding: 2em;">
+            <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center; margin: 0;">
+            <i>Know Me Well</i>
+            </h1>
+            
+            <div class="container-hoa5">
+            <div class="card-hoa5" data-image="IMG/hobby.jpg" title="Writing, the voice of the soul"> Hobby </div>        
+            <div class="card-hoa5" data-image="IMG/flower.jpg" title="Lotus, the bloom of resilience"> Flower </div> 
+            <div class="card-hoa5" data-image="IMG/color.jpg" title="Blue, the color of calm"> Color </div> 
+            <div class="card-hoa5" data-image="IMG/season.jpg" title="Fall, the whisper of change"> Season </div> 
+            <div class="card-hoa5" data-image="IMG/character.jpg" title="Odysseus, the mind of a wanderer"> Character </div> 
+            <div class="card-hoa5" data-image="IMG/dessert.jpg" title="Cookies and Cream Ice Cream, the swirl of indulgence"> Dessert </div> 
+            <div class="card-hoa5" data-image="IMG/food.jpg" title="Bread and Pastries, the warmth of comfort"> Food </div> 
+            <div class="card-hoa5" data-image="IMG/place.jpg" title="Valley, the cradle of serenity"> Place </div> 
+            <div class="card-hoa5" data-image="IMG/time.jpg" title="Nighttime, the veil of mystery"> Time </div> 
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelectorAll('.card-hoa5').forEach(function(card) {
+            // Add image element if not present
+            if (!card.querySelector('img')) {
+                var img = document.createElement('img');
+                img.src = card.dataset.image;
+                img.alt = card.textContent + ' image';
+                card.appendChild(img);
+            }
+            card.addEventListener('click', function() {
+                card.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Thousand Waves. All rights reserved.</p>
+    </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>About Me</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgb(242, 242, 242);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("IMG/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  background-color: #0b0830;
+  color: #FFFFFF;
+  padding: 1em;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.top-nav > img {
+  width: 3vw;
+  height: auto;
+  margin-right: 1em;
+}
+
+.top-nav .text {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 1vh;
+  margin-right: 2vw;
+}
+
+.top-nav .text h1 {
+  font-size: 2.4vh;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  flex: 1;
+}
+
+.navigation img {
+  width: 3vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .center-container {
+    width: 98vw;
+    max-width: 98vw;
+    height: auto;
+    max-height: none;
+  }
+  .left-box, .right-box {
+    width: 48vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 2vw 1vw;
+  }
+}
+@media (max-width: 900px) {
+  .bg::before {
+    background-size: contain;
+  }
+}
+
+.footer {
+  width: 100vw;
+  background: #0b0830;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content {
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    font-size: 0.9em;
+  }
+}
+
+
+/* content styles */
+
+.column {
+  float: left;
+  padding: 12px;
+}
+
+.clearfix {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.column.menu {
+  width: 25%;
+  min-width: 180px;
+  box-sizing: border-box;
+  background-color: rgb(239, 222, 205);
+}
+
+.column.content {
+  width: 75%;
+  min-width: 220px;
+  box-sizing: border-box;
+  background-color: rgb(181, 157, 123);
+  padding-top: 2%;
+}
+
+.menu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #0b0830;
+  color: #ffffff;
+  font-size: 120%;
+}
+
+.menu li:hover {
+  background-color: #3c36a8;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .clearfix {
+    flex-direction: column;
+  }
+  .column.menu, .column.content {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.skillsandexperience {
+    padding: 24px;
+    margin: 16px auto;
+    width: 64%;
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    justify-content: center; /* Center align items horizontally */
+    flex-direction: column; /* Ensure image and text are side by side */
+    border-width: 2%;
+    border-style: solid;
+    border-color: #0b0830;
+    box-shadow: 0 0 10% rgba(0, 0, 0, 0.1);
+}
+
+.skillsandexperience img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.skillsandexperience b {
+  display: block;
+  text-align: center;
+  margin: 0 auto 0.5em auto;
+}
+
+.skillsandexperience .text {
+    max-width: 44%;
+    text-align: center; /* Center align text */
+    margin: 0; /* Remove left margin */
+}
+
+.left-box p, .right-box p, .skillsandexperience p, .column.content p {
+  font-size: 120%;
+}
+
+.column.content h1, .skillsandexperience h1 {
+  font-size: 240%;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.gallery img {
+    width: 20vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <img src="IMG/pen-icon-2.png" alt="Logo">
+  <div class="text">
+    <h1>Thousand Waves</h1>
+  </div>
+  <div class="navigation">
+    <a href="index.html">
+      <img src="IMG/home-icon.png" alt="Logo" title="Home">
+    </a>
+    <a href="about_me.html">
+      <img src="IMG/about-me-icon.png" alt="Logo" title="About Me">
+    </a>
+    <a href="know_me_well.html">
+      <img src="IMG/know-me-well-icon.png" alt="Logo" title="Know Me Well">
+    </a>
+    <a href="zodiac_signs.html">
+      <img src="IMG/zodiac-icon.png" alt="Logo" title="Zodiac Signs">
+    </a>
+    <a href="portfolio.html">
+        <img src="IMG/continous-learning-icon.png" alt="Logo" title="Zodiac Signs">
+    </a>
+  </div>
+</div>
+
+<div class="bg">
+  <div class="clearfix">
+    <div class="column menu">
+      <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <img src="IMG/me.png" alt="me" style="width: 40%; height: 40%; margin-bottom: 10px; border-radius: 50%;">
+      </div>
+      <br>
+      <br>
+      <ul>
+        <li><a href="#section1">Who Am I</a></li>
+        <li><a href="#section2">Skills</a></li>
+        <li><a href="#section3">Experience</a></li>
+        <li><a href="#section4">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="column content">
+      <section id="section1">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <img src="IMG/me.png" alt="me" style="width: 10%; height: auto; margin-bottom: 10px; border-radius: 50%;">
+        </div>
+        <div class="text">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-size: 300%; font-family: 'Playfair Display', serif; text-align: center;"> <i> Who Am I </i> </h1>
+          </div>
+          <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> Hi! I'm Andrew Dominic L. Ma-ano also known by my internet persona of <b>"Horizon"</b>. I have experience in creating arts in terms of drawing, digital graphics, and creating codes.</p>
+          <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> Now please indulge yourselves as you get to know me better.</p>
+        </div>
+      </section>
+      <br>
+      <br>
+      <section id="section2">
+        <div class="skillsandexperience">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;"> <i> Skills </i> </h1>
+          </div>
+          <p>
+            <img src="IMG/creativity-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Creativity and Problem-Solving </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> - With experience both from school and personal life struggles, I have developed a knack for quickly creating or imagining something out of simple things and thinking carefully about how to overcome challenges in life.</p>
+          </p>
+          <p>
+            <img src="IMG/attention-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Attention to Detail </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> - Ensuring that the quality of my works and outputs embody my vision.</p>
+          </p>
+          <p>
+            <img src="IMG/technical-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Technical Proficiency </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> - Mastery of any kind of software whether it is in the field of writing, coding, web development, or creation of digital graphics. </p>
+          </p>
+          <p>
+            <img src="IMG/time-management-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Time Management and Organization </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > - Meeting deadlines before or on time.</p>
+          </p>
+          <p>
+            <img src="IMG/continous-learning-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> Continuous Learning </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > - Keeping up with new discoveries and applying them to the creation of my works.</p>
+          </p>
+        </div>
+      </section>
+      <br>
+      <section id="section3">
+        <div class="skillsandexperience">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;"> <i> Experience </i> </h1>
+          </div>
+          <p>
+            <img src="IMG/coding-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Coding </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> - Learned and experienced during my collegiate years.</p>
+          </p>
+          <p>
+            <img src="IMG/computer-repair-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Computer Repair </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> - Repairing and troubleshooting any electronic devices.</p>
+          </p>
+          <p>
+            <img src="IMG/website-development-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Website Development </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> - Ability to create and maintain a working website using HTML, CSS, JavaScript, and backend coding. </p>
+          </p>
+          <p>
+            <img src="IMG/writing-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > Writing </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > - Can create wonderful literary art in both fiction and non-fiction genres. </p>
+          </p>
+          <p>
+            <img src="IMG/python-icon.png" alt="Logo">
+            <b style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif"> Python </b> <p style="font-size: 150%; font-family: Georgia, 'Times New Roman', Times, serif" > - Using Python as the main language in coding.</p>
+          </p>
+        </div>
+      </section>
+      <section id="section4">
+        <h1 style="font-size: 350%; font-family: 'Playfair Display', serif; text-align: center;">Gallery</h1>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="IMG/PROG1.png" alt="Python Project Screenshot">
+            <p style="font-size: 120%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Sample code for my Python Procedural Project</p>
+          </div>
+          <div class="gallery-item">
+            <img src="IMG/PROG2.png" alt="Website Project Screenshot">
+            <p style="font-size: 120%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Sample code for my Website Development Project</p>
+          </div>
+          <div class="gallery-item">
+            <img src="IMG/LOGO1.png" alt="Commissioned Logo 1">
+            <p style="font-size: 120%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Commissioned Logo 1</p>
+          </div>
+          <div class="gallery-item">
+            <img src="IMG/LOGO2.png" alt="Commissioned Logo 2">
+            <p style="font-size: 120%; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Commissioned Logo 2</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 Thousand Waves. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
