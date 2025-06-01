@@ -90,26 +90,6 @@ body, html {
   display: block;
 }
 
-@media (max-width: 1200px) {
-  .center-container {
-    width: 98vw;
-    max-width: 98vw;
-    height: auto;
-    max-height: none;
-  }
-  .left-box, .right-box {
-    width: 48vw;
-    max-width: 98vw;
-    min-width: 0;
-    padding: 2vw 1vw;
-  }
-}
-@media (max-width: 900px) {
-  .bg::before {
-    background-size: contain;
-  }
-}
-
 .footer {
   width: 100vw;
   background: #0b0830;
@@ -138,10 +118,10 @@ body, html {
 
 .container-hoa5 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
     gap: 20px;
     justify-content: center;
-    max-width: 660px;
+    max-width: 100vw;
     margin: auto;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -159,6 +139,8 @@ body, html {
     position: relative;
     overflow: hidden;
     transition: background 0.3s;
+    max-width: 100vw;
+    max-height: 100vw;
 }
 .card-hoa5 img {
     width: 100%;
@@ -169,6 +151,8 @@ body, html {
     top: 0;
     left: 0;
     z-index: 2;
+    max-width: 100%;
+    max-height: 100%;
 }
 .card-hoa5.active img {
     display: block;
@@ -183,6 +167,48 @@ body, html {
   flex-wrap: wrap;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .container-hoa5 {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+  }
+  .card-hoa5 {
+    width: 200px;
+    height: 200px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 30vw;
+    max-height: 30vw;
+  }
+}
+@media (max-width: 900px) {
+  .container-hoa5 {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+  }
+  .card-hoa5 {
+    width: 120px;
+    height: 120px;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 30vw;
+    max-height: 30vw;
+  }
+}
+@media (max-width: 600px) {
+  .container-hoa5 {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    gap: 8px;
+  }
+  .card-hoa5 {
+    width: 80px;
+    height: 80px;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 30vw;
+    max-height: 30vw;
+    font-size: 0.8em;
+  }
 }
 
 </style>
@@ -230,6 +256,22 @@ body, html {
             <div class="card-hoa5" data-image="IMG/place.jpg" title="Valley, the cradle of serenity"> Place </div> 
             <div class="card-hoa5" data-image="IMG/time.jpg" title="Nighttime, the veil of mystery"> Time </div> 
             </div>
+            <details style="margin-top:2em; width:100%; max-width:660px; color:#222; background:#f7f7f7; border-radius:8px; border:1px solid #ccc; font-size:1em;">
+      <summary style="font-weight:bold; font-size:1.1em; cursor:pointer; color:#0b0830;">References</summary>
+      <div style="padding:1em; color:#222;">
+        <ul style="padding-left:1.2em;">
+          <li>Hobby - Natasharenas. (n.d.). Write aesthetic. Pinterest. <a href="https://ph.pinterest.com/pin/38984353018023031/" target="_blank">link</a></li>
+          <li>Flower - Fashion, Fashion Ideas, Women Fashion. (n.d.). The Symbolism Of Seeing A White Lotus In A Dream. Pinterest. <a href="https://ph.pinterest.com/pin/180918110026594495/" target="_blank">link</a></li>
+          <li>Color - scoutingthetrooper. (n.d.). Night. Tumblr. <a href="https://www.tumblr.com/scoutingthetrooper/725312588094865408" target="_blank">link</a></li>
+          <li>Season - ~•TuDoria•~. (n.d.). ✒📜🍂. Pinterest. <a href="https://ph.pinterest.com/pin/28499410136913897/" target="_blank">link</a></li>
+          <li>Character - ੭ cy cy ୨𝑒. (n.d.). ﹏ ODYSEUS ；EPIC. Pinterest. <a href="https://ph.pinterest.com/pin/94223817197353038/" target="_blank">link</a></li>
+          <li>Dessert - Richanddelish. (n.d.). Cookies And Cream Ice Cream (No Churn). Pinterest. <a href="https://ph.pinterest.com/pin/933863672731969729/" target="_blank">link</a></li>
+          <li>Food - Freepik. (n.d.). Premium Photo | Delicious natural aesthetic baked bread. Pinterest. <a href="https://ph.pinterest.com/pin/957155727044357629/" target="_blank">link</a></li>
+          <li>Place - YouPic. (n.d.). Field’s Valley by tricialpat on YouPic. Pinterest. <a href="https://ph.pinterest.com/pin/975029388124841310/" target="_blank">link</a></li>
+          <li>Time - Jennings, G. (n.d.). YouPic. (n.d.). Field’s Valley by tricialpat on YouPic. Pinterest. <a href="https://ph.pinterest.com/pin/975029388124841310/" target="_blank">link</a>. <a href="https://www.flickr.com/photos/grainge1973/15597220686" target="_blank">link</a></li>
+        </ul>
+      </div>
+    </details>
         </div>
     </div>
 

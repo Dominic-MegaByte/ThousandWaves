@@ -212,6 +212,38 @@ body, html {
     margin: 0 auto;
 }
 
+@media (max-width: 900px) {
+  .zodiac-table-container {
+    width: 100vw;
+    margin: 1em 0;
+  }
+  #zodiac-table th, #zodiac-table td {
+    padding: 0.5em 0.3em;
+    font-size: 0.95em;
+  }
+}
+@media (max-width: 600px) {
+  .zodiac-table-container {
+    width: 100vw;
+    margin: 0.5em 0;
+  }
+  #zodiac-table th, #zodiac-table td {
+    padding: 0.3em 0.1em;
+    font-size: 0.8em;
+  }
+  #zodiac-table {
+    font-size: 0.8em;
+    min-width: 600px;
+  }
+  .content-wrapper {
+    padding: 0.5em !important;
+    gap: 1em !important;
+  }
+  details[open], details {
+    max-width: 98vw !important;
+    width: 98vw !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -259,7 +291,6 @@ body, html {
                 <thead>
                     <tr>
                     <th>Name</th>
-                    <th>Months</th>
                     <th>Element</th>
                     <th>Symbol</th>
                     <th>Nickname</th>
@@ -274,6 +305,27 @@ body, html {
                 </tbody>
                 </table>
             </div>
+            <details style="margin-top:2em; width:100%; max-width:660px; color:#222; background:#f7f7f7; border-radius:8px; border:1px solid #ccc; font-size:1em; margin-left:auto; margin-right:auto;">
+              <summary style="font-weight:bold; font-size:1.1em; cursor:pointer; color:#0b0830;">References</summary>
+              <div style="padding:1em; color:#222;">
+                <ul style="padding-left:1.2em;">
+                  <li>Santino, C. (2024, December 22). What are the personality traits of a Capricorn? A complete guide to the zodiac sign. People.com. <a href="https://people.com/what-is-a-capricorn-dates-personality-traits-compatibilities-8418308#:~:text=According%20to%20astrologer%20and%20bestselling,duty%20and%20can%20let%20loose.%E2%80%9D" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025a, January 1). Aries Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/aries-zodiac-sign-personality-traits#:~:text=Aries%20represents%20the%20singular%20spirit,watch%20out%20for%20selfish%20tendencies." target="_blank">link</a></li>
+                  <li>Kelly, A. (2025, January 1). 12 Zodiac Signs: Dates and personality traits of each star sign. Allure. <a href="https://www.allure.com/story/zodiac-sign-personality-traits-dates" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025b, January 1). Taurus Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/taurus-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025b, January 1). Gemini Zodiac Sign: Personality traits and sign Dates. Allure. <a href="https://www.allure.com/story/gemini-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025b, January 1). Cancer Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/cancer-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2024, November 1). Leo Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/leo-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025e, January 1). Virgo Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/virgo-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025d, January 1). Libra Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/libra-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025e, January 1). Scorpio Zodiac Sign: Personality traits and sign dates. Allure. <a href="https://www.allure.com/story/scorpio-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025g, January 1). The personality traits of a Sagittarius, including their compatibility with other signs. Allure. <a href="https://www.allure.com/story/sagittarius-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025g, January 1). The personality traits of a Capricorn, including their compatibility with other signs. Allure. <a href="https://www.allure.com/story/capricorn-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025i, January 1). The personality traits of an Aquarius, explained. Allure. <a href="https://www.allure.com/story/aquarius-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                  <li>Kelly, A. (2025e, January 1). Pisces Zodiac Sign: Personality traits and sign Dates. Allure. <a href="https://www.allure.com/story/pisces-zodiac-sign-personality-traits" target="_blank">link</a></li>
+                </ul>
+              </div>
+            </details>
         </div>
     </div>
 
@@ -303,7 +355,7 @@ body, html {
             return;
           }
           data.forEach(z => {
-            const row = `<tr><td>${z.name}</td><td>${z.months}</td><td>${z.element}</td><td>${z.symbol}</td><td>${z.nickname}</td><td>${z.compatibility}</td><td>${z.personalities}</td><td>${z.weakness}</td><td>${z.modalities}</td></tr>`;
+            const row = `<tr><td>${z.name}</td><td>${z.element}</td><td>${z.symbol}</td><td>${z.nickname}</td><td>${z.compatibility}</td><td>${z.personalities}</td><td>${z.weakness}</td><td>${z.modalities}</td></tr>`;
             tbody.innerHTML += row;
           });
         }
